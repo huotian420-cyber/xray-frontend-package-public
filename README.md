@@ -7,7 +7,7 @@
 - `SHA256SUMS.txt`
 
 对应私有源码提交：
-- `55be4a8` `Tighten SSH defaults and refresh release package`
+- `27fe6a8` `Fix CN blocking routing sniffing`
 
 Ubuntu 下载命令：
 
