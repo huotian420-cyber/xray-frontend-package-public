@@ -7,7 +7,7 @@
 - `SHA256SUMS.txt`
 
 对应私有源码提交：
-- `cca84af` `Harden security flows and refresh release package`
+- `9779239` `Add recovery admin tooling and enforce 2FA setup`
 
 Ubuntu 下载命令：
 
