@@ -7,7 +7,7 @@
 - `SHA256SUMS.txt`
 
 对应私有源码提交：
-- `27fe6a8` `Fix CN blocking routing sniffing`
+- `cca84af` `Harden security flows and refresh release package`
 
 Ubuntu 下载命令：
 
