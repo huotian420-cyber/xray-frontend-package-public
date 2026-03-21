@@ -16,7 +16,7 @@
 - `SHA256SUMS.txt`
 
 对应私有源码提交：
-- `1b5482d` `Harden admin secret exposure and sensitive actions`
+- `62978dd` `Fix Reality fallback mode-switch conflict`
 
 仓库根目录直链：
 
