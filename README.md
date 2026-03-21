@@ -7,7 +7,7 @@
 - `SHA256SUMS.txt`
 
 对应私有源码提交：
-- `d47e66c` `Reconcile managed TLS nodes and refresh release package`
+- `8261415` `Add VLESS cipher pair support and refresh release package`
 
 Ubuntu 下载命令：
 
