@@ -34,4 +34,5 @@ curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercon
 
 说明：
 - 这里是带前端公开包
+- 如果你要改代码，不要看这个仓，去 `xray-`
 - 如果你只要无前端 headless 包，不要下这个仓，去 `xray-release-public`
