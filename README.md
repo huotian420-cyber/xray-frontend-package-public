@@ -7,7 +7,7 @@
 - `SHA256SUMS.txt`
 
 对应私有源码提交：
-- `a6905bf` `Refresh release checksums`
+- `00de76c` `Relax 2FA challenge IP binding`
 
 Ubuntu 下载命令：
 
