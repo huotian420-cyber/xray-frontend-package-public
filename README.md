@@ -16,12 +16,31 @@
 - `SHA256SUMS.txt`
 
 对应私有源码提交：
-- `62978dd` `Fix Reality fallback mode-switch conflict`
+- `30accb7` `Align full frontend repo with latest Xray compatibility`
+
+当前根目录同步的公开包：
+- 基于带前端私有完整源码仓 `main` 的最新安装包
+- 已对齐官方正式版 `Xray-core v26.3.27`
+- 已包含 `Reality x25519` 新输出兼容、`XHTTP mode` 对齐和 `Reality shortIds` 归一化
+- 当前固定版本 tag：`v2026.03.29-frontend-direct-1`
 
 仓库根目录直链：
 
 ```bash
 curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/main/xray-backend-release.tar.gz
+```
+
+固定版本下载：
+
+```bash
+curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/v2026.03.29-frontend-direct-1/xray-backend-release.tar.gz
+```
+
+校验命令：
+
+```bash
+curl -fL --progress-bar -o SHA256SUMS.txt https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/main/SHA256SUMS.txt
+sha256sum -c SHA256SUMS.txt
 ```
 
 和另外 3 个仓的关系：
@@ -34,5 +53,7 @@ curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercon
 
 说明：
 - 这里是带前端公开包
+- Release 页面会保留历史带前端版本
+- 仓库根目录只保留当前最新的带前端包
 - 如果你要改代码，不要看这个仓，去 `xray-`
 - 如果你只要无前端 headless 包，不要下这个仓，去 `xray-release-public`
