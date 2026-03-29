@@ -18,15 +18,15 @@
 - 包名：`xray-backend-release.tar.gz`
 - 校验：`SHA256SUMS.txt`
 - 对应源码仓：[`huotian420-cyber/xray-`](https://github.com/huotian420-cyber/xray-)
-- 对应功能提交：`9f69fed` `Remove SSH knock and ship real traffic monitoring`
-- 当前固定版本：`v2026.03.30-frontend-direct-1`
+- 对应功能提交：`081b00d` `Add managed SSH port switching`
+- 当前固定版本：`v2026.03.30-frontend-direct-2`
 
 ## Tag 规则
 
 - 带前端公开包统一使用：
   - `vYYYY.MM.DD-frontend-direct-N`
 - 例子：
-  - `v2026.03.30-frontend-direct-1`
+  - `v2026.03.30-frontend-direct-2`
 - 含义：
   - `YYYY.MM.DD`：发布日期
   - `frontend`：带前端安装包
@@ -38,6 +38,7 @@
 - 移除 SSH knock 前后端与安装脚本逻辑
 - 接入真实流量统计链路
 - 按 Xray 当前行为补齐 `XHTTP / gRPC / ALPN(h2/h3/http/1.1)` 兼容
+- 新增 SSH 端口管理：可在菜单里输入目标端口，自动放行新端口、重载 SSH、关闭旧端口并同步 Fail2ban
 
 ## 下载
 
@@ -50,7 +51,7 @@ sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(
 Ubuntu 一键安装固定版本：
 
 ```bash
-sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/v2026.03.30-frontend-direct-1/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh'
+sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/v2026.03.30-frontend-direct-2/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh'
 ```
 
 最新版本：
@@ -62,7 +63,7 @@ curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercon
 固定版本：
 
 ```bash
-curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/v2026.03.30-frontend-direct-1/xray-backend-release.tar.gz
+curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/v2026.03.30-frontend-direct-2/xray-backend-release.tar.gz
 ```
 
 校验：
