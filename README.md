@@ -18,7 +18,7 @@
 - 包名：`xray-backend-release.tar.gz`
 - 校验：`SHA256SUMS.txt`
 - 对应源码仓：[`huotian420-cyber/xray-`](https://github.com/huotian420-cyber/xray-)
-- 对应功能提交：`081b00d` `Add managed SSH port switching`
+- 对应功能提交：`a5b0d27` `Add managed SSH port switching`
 - 当前固定版本：`v2026.03.30-frontend-direct-2`
 
 ## Tag 规则
