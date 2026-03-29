@@ -21,6 +21,18 @@
 - 对应功能提交：`9f69fed` `Remove SSH knock and ship real traffic monitoring`
 - 当前固定版本：`v2026.03.30-frontend-direct-1`
 
+## Tag 规则
+
+- 带前端公开包统一使用：
+  - `vYYYY.MM.DD-frontend-direct-N`
+- 例子：
+  - `v2026.03.30-frontend-direct-1`
+- 含义：
+  - `YYYY.MM.DD`：发布日期
+  - `frontend`：带前端安装包
+  - `direct`：当前这条公开直发稳定线
+  - `N`：当天递增版本号
+
 ## 本次版本包含
 
 - 移除 SSH knock 前后端与安装脚本逻辑
