@@ -1,4 +1,4 @@
-# xray-frontend-release-public
+# xray-frontend-package-public
 
 这是带前端安装包的公开发布仓。
 
@@ -17,8 +17,7 @@
 
 - 包名：`xray-backend-release.tar.gz`
 - 校验：`SHA256SUMS.txt`
-- 对应源码仓：[`huotian420-cyber/xray-`](https://github.com/huotian420-cyber/xray-)
-- 对应功能提交：`a5b0d27` `Add managed SSH port switching`
+- 对应源码仓：[`huotian420-cyber/xray-frontend-source`](https://github.com/huotian420-cyber/xray-frontend-source)
 - 当前固定版本：`v2026.03.30-frontend-direct-2`
 
 ## Tag 规则
@@ -33,6 +32,13 @@
   - `direct`：当前这条公开直发稳定线
   - `N`：当天递增版本号
 
+## 当前版本说明
+
+- 这是稳定线的带前端包
+- 默认带网页面板
+- 前端静态资源已经打进安装包
+- 适合直接下载和部署网页管理面板
+
 ## 本次版本包含
 
 - 移除 SSH knock 前后端与安装脚本逻辑
@@ -45,42 +51,42 @@
 Ubuntu 一键安装最新版本：
 
 ```bash
-sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/main/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh'
+sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh'
 ```
 
 Ubuntu 一键安装固定版本：
 
 ```bash
-sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/v2026.03.30-frontend-direct-2/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh'
+sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/v2026.03.30-frontend-direct-2/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh'
 ```
 
 最新版本：
 
 ```bash
-curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/main/xray-backend-release.tar.gz
+curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/xray-backend-release.tar.gz
 ```
 
 固定版本：
 
 ```bash
-curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/v2026.03.30-frontend-direct-2/xray-backend-release.tar.gz
+curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/v2026.03.30-frontend-direct-2/xray-backend-release.tar.gz
 ```
 
 校验：
 
 ```bash
-curl -fL --progress-bar -o SHA256SUMS.txt https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-release-public/main/SHA256SUMS.txt
+curl -fL --progress-bar -o SHA256SUMS.txt https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/SHA256SUMS.txt
 sha256sum -c SHA256SUMS.txt
 ```
 
 ## 4 个仓怎么分
 
-- 带前端私有源码：[`huotian420-cyber/xray-`](https://github.com/huotian420-cyber/xray-)
+- 带前端私有源码：[`huotian420-cyber/xray-frontend-source`](https://github.com/huotian420-cyber/xray-frontend-source)
 - 无前端私有源码：[`huotian420-cyber/xray-headless-source`](https://github.com/huotian420-cyber/xray-headless-source)
-- 带前端公开安装包：[`huotian420-cyber/xray-frontend-release-public`](https://github.com/huotian420-cyber/xray-frontend-release-public)
+- 带前端公开安装包：[`huotian420-cyber/xray-frontend-package-public`](https://github.com/huotian420-cyber/xray-frontend-package-public)
 - 无前端公开安装包：[`huotian420-cyber/xray-release-public`](https://github.com/huotian420-cyber/xray-release-public)
 
 ## 如果你的目标不是下载包
 
-- 要改代码：去 `xray-`
+- 要改代码：去 `xray-frontend-source`
 - 要下无前端包：去 `xray-release-public`
