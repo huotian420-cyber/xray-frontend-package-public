@@ -48,7 +48,7 @@ curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercon
 
 ```bash
 curl -fL --progress-bar -o SHA256SUMS.txt https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/SHA256SUMS.txt
-sha256sum -c SHA256SUMS.txt
+grep "xray-backend-release.tar.gz" SHA256SUMS.txt | sha256sum -c -
 ```
 
 ```bash
