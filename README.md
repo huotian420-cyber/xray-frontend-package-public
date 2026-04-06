@@ -1,75 +1,46 @@
 # xray-frontend-package-public
 
-这是带前端安装包的公开发布仓。
+这是带前端的包仓。
 
-## 仓库角色
+先看这个表：
 
-- 可见性：`public`
-- 内容：当前最新带前端安装包、校验文件、Release 历史版本
-- 用途：直接下载可访问网页面板的安装包
+| 仓库 | 前端网页面板 | Mihomo | 类型 |
+| --- | --- | --- | --- |
+| `xray-frontend-source` | 有 | 没有 | 源码仓 |
+| `xray-frontend-package-public` | 有 | 没有 | 包仓 |
+| `xray-headless-source` | 没有 | 有 | 源码仓 |
+| `xray-release-public` | 没有 | 有 | 包仓 |
 
-## 不要拿它做什么
+## 这个仓是什么
 
-- 不要把它当源码仓
-- 不要把它当无前端安装包仓
+- 带前端
+- 不带 Mihomo
+- 这是包仓，不是源码仓
+- 这里放的是可直接下载的安装包
 
-## 当前发布
+## 你什么时候来这个仓
 
-- 包名：`xray-backend-release.tar.gz`
-- 校验：`SHA256SUMS.txt`
+- 你要下载安装带前端版本
+- 你只关心安装包和校验文件
+
+## 你不要来这个仓的情况
+
+- 你要改源码
+- 你要找无前端版本
+- 你要找带 Mihomo 的那条线
+
+## 当前文件
+
+- 安装包：`xray-backend-release.tar.gz`
+- 校验文件：`SHA256SUMS.txt`
 - 对应源码仓：[`huotian420-cyber/xray-frontend-source`](https://github.com/huotian420-cyber/xray-frontend-source)
-- 当前固定版本：`v2026.03.30-frontend-direct-2`
-
-## Tag 规则
-
-- 带前端公开包统一使用：
-  - `vYYYY.MM.DD-frontend-direct-N`
-- 例子：
-  - `v2026.03.30-frontend-direct-2`
-- 含义：
-  - `YYYY.MM.DD`：发布日期
-  - `frontend`：带前端安装包
-  - `direct`：当前这条公开直发稳定线
-  - `N`：当天递增版本号
-
-## 当前版本说明
-
-- 这是稳定线的带前端包
-- 默认带网页面板
-- 前端静态资源已经打进安装包
-- 适合直接下载和部署网页管理面板
-
-## 本次版本包含
-
-- 移除 SSH knock 前后端与安装脚本逻辑
-- 接入真实流量统计链路
-- 按 Xray 当前行为补齐 `XHTTP / gRPC / ALPN(h2/h3/http/1.1)` 兼容
-- 新增 SSH 端口管理：可在菜单里输入目标端口，自动放行新端口、重载 SSH、关闭旧端口并同步 Fail2ban
 
 ## 下载
-
-Ubuntu 一键安装最新版本：
-
-```bash
-sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh'
-```
-
-Ubuntu 一键安装固定版本：
-
-```bash
-sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/v2026.03.30-frontend-direct-2/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh'
-```
 
 最新版本：
 
 ```bash
 curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/xray-backend-release.tar.gz
-```
-
-固定版本：
-
-```bash
-curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/v2026.03.30-frontend-direct-2/xray-backend-release.tar.gz
 ```
 
 校验：
@@ -79,14 +50,15 @@ curl -fL --progress-bar -o SHA256SUMS.txt https://raw.githubusercontent.com/huot
 sha256sum -c SHA256SUMS.txt
 ```
 
-## 4 个仓怎么分
+一键安装：
 
-- 带前端私有源码：[`huotian420-cyber/xray-frontend-source`](https://github.com/huotian420-cyber/xray-frontend-source)
-- 无前端私有源码：[`huotian420-cyber/xray-headless-source`](https://github.com/huotian420-cyber/xray-headless-source)
-- 带前端公开安装包：[`huotian420-cyber/xray-frontend-package-public`](https://github.com/huotian420-cyber/xray-frontend-package-public)
-- 无前端公开安装包：[`huotian420-cyber/xray-release-public`](https://github.com/huotian420-cyber/xray-release-public)
+```bash
+sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh'
+```
 
-## 如果你的目标不是下载包
+## 4 个仓怎么选
 
-- 要改代码：去 `xray-frontend-source`
-- 要下无前端包：去 `xray-release-public`
+- 你要改带前端代码：去 `xray-frontend-source`
+- 你要下载带前端包：去 `xray-frontend-package-public`
+- 你要改无前端代码：去 `xray-headless-source`
+- 你要下载无前端包：去 `xray-release-public`
