@@ -51,6 +51,16 @@ curl -fL --progress-bar -o SHA256SUMS.txt https://raw.githubusercontent.com/huot
 grep "xray-backend-release.tar.gz" SHA256SUMS.txt | sha256sum -c -
 ```
 
+## 覆盖更新
+
+保留原机器的 `data.db`、`config.conf`、Nginx、证书和防火墙，只覆盖后端程序与管理脚本：
+
+```bash
+sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh upgrade'
+```
+
+## 全新安装
+
 ```bash
 sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh'
 ```
