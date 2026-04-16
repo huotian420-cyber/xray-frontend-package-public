@@ -59,6 +59,12 @@ grep "xray-backend-release.tar.gz" SHA256SUMS.txt | sha256sum -c -
 sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh upgrade'
 ```
 
+升级后如果博客还停留在旧状态，可以直接在服务器执行：
+
+```bash
+sudo xy blog-normal
+```
+
 ## 全新安装
 
 ```bash
