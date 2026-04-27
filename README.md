@@ -1,68 +1,50 @@
 # xray-frontend-package-public
 
-这是现在在用的带前端包仓。
+这是公开的带前端成品仓。
 
-先看现在保留的 4 个仓：
+当前保留的仓库关系：
 
-| 仓库 | 前端 | Mihomo | 类型 | 现在用途 |
-| --- | --- | --- | --- | --- |
-| `xray-frontend-source` | 有 | 没有 | 源码仓 | 改带前端代码 |
-| `xray-frontend-package-public` | 有 | 没有 | 包仓 | 下带前端安装包 |
-| `xray-headless-source` | 没有 | 有 | 源码仓 | 改无前端代码 |
-| `xray-release-public` | 没有 | 有 | 包仓 | 下无前端安装包 |
+| 仓库 | 类型 | 用途 |
+| --- | --- | --- |
+| `xray-frontend-source` | 私有源码仓 | 面板与后端源码 |
+| `xray-frontend-package-public` | 公开包仓 | 带前端安装包与客户端成品 |
+| `xray-headless-source` | 私有源码仓 | 无前端源码 |
+| `xray-release-public` | 公开包仓 | 无前端安装包 |
 
-## 先记住这件事
+## 当前内容
 
-- 现在真正要看的只有这 4 个仓
-- 这个仓是“带前端 + 包仓”
-- 以前的旧仓已经删掉，不用再看旧包仓名字
+- 根目录 `xray-backend-release.tar.gz`
+  - 最新带前端后端安装包
+- 根目录 `SHA256SUMS.txt`
+  - 根目录安装包校验
+- `releases/android-20260427/`
+  - Android 客户端 APK、构建清单、校验文件
+- `releases/windows-20260427/`
+  - Windows 客户端 ZIP、构建清单、校验文件
 
-## 这个仓里是什么
+对应源码仓：
 
-- 带前端版本的安装包
-- 没有 Mihomo 这条线
-- 这里只放下载文件，不放源码
+- [`huotian420-cyber/xray-frontend-source`](https://github.com/huotian420-cyber/xray-frontend-source)
+- 当前同步源码提交：`4c532e1`
 
-## 什么时候来这里
-
-- 你要下载带前端版本
-- 你只想拿安装包和校验文件
-
-## 什么时候不要来这里
-
-- 你要改源码
-- 你要找无前端版本
-- 你要找 Mihomo 那条无前端线
-
-## 当前文件
-
-- 安装包：`xray-backend-release.tar.gz`
-- 校验文件：`SHA256SUMS.txt`
-- 对应源码仓：[`huotian420-cyber/xray-frontend-source`](https://github.com/huotian420-cyber/xray-frontend-source)
-
-## 下载
+## 直接下载
 
 ```bash
 curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/xray-backend-release.tar.gz
-```
-
-```bash
 curl -fL --progress-bar -o SHA256SUMS.txt https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/SHA256SUMS.txt
 grep "xray-backend-release.tar.gz" SHA256SUMS.txt | sha256sum -c -
 ```
 
-## 覆盖更新
+## 仓库内客户端成品
 
-保留原机器的 `data.db`、`config.conf`、Nginx、证书和防火墙，只覆盖后端程序与管理脚本：
+- `releases/android-20260427/v2rayNG_2.1.3-fdroid_arm64-v8a.apk`
+- `releases/android-20260427/v2rayNG_2.1.3-fdroid_universal.apk`
+- `releases/windows-20260427/v2rayN-windows-64.zip`
+
+## 覆盖升级
 
 ```bash
 sudo bash -c 'set -e; apt-get update -y; apt-get install -y curl tar; workdir=$(mktemp -d); cd "$workdir"; curl -fL --progress-bar -o xray-backend-release.tar.gz https://raw.githubusercontent.com/huotian420-cyber/xray-frontend-package-public/main/xray-backend-release.tar.gz; tar -xzf xray-backend-release.tar.gz; chmod +x install.sh; ./install.sh upgrade'
-```
-
-升级后如果博客还停留在旧状态，可以直接在服务器执行：
-
-```bash
-sudo xy blog-normal
 ```
 
 ## 全新安装
