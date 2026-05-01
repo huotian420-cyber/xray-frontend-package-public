@@ -1,7 +1,0 @@
-Release: Secure subscription Windows build 2026-04-27
-Date: 2026-04-27
-v2rayN commit: bd9218a7f87a5f5f566eabd73ee9f89e6832d529
-Artifacts:
-- v2rayN-windows-64.zip
-Checksums:
-4d77baf54bf011c3aa642fea506e8b5798d4fc0f0d857753621b33093c8b6ad7  v2rayN-windows-64.zip
