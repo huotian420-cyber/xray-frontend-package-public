@@ -17,6 +17,7 @@
 - 对应源码仓：`huotian420-cyber/xray-frontend-source`。
 - 发布包包含后端二进制、`install.sh`、Web 面板静态文件和伪装站静态文件。
 - 不包含源码、不包含无前端/Mihomo 版本、不包含客户端安装包。
+- `xy -> Nginx 管理 -> Komari 独立反代` 可把独立 Komari 域名反代到本机 `127.0.0.1:25774`。
 
 ## 当前文件
 
